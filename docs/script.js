@@ -56,26 +56,29 @@ const books = {
   ],
 };
 
-const loadEvent = () => {
-  const bookscards = books.cards
-    .map(
-      (book, index) => `
-      
-        <div class="bookcard">
-          <h3 class="bookcardindex">${index + 1}</h3>
-          <h2 class="sub">${book.sub}</h2>
-          <h4 class="title">${book.title}</h2>
-          <h4 class="text">${book.text}</h2>
-        <div class="button">           
-          <button>Read more <span     class="material-symbols-outlined">arrow_forward</span></  button>
-         </div> 
-      </div>
-  `
-    )
-    .join(" ");
+function loadEvent() {
+  const cards = document.querySelector(".cards");
 
-  const container = document.querySelector(".bookcontainer");
+  const cardsHTML = books.cards.map(
+    (card, index) => `
+        <div class="card">
+            <h4 class="number">${index + 1}</h4>
+            <div class="textDiv">
+                <h5 class="sub">${card.sub}</h5>
+                <h2 class="title">${card.title}</h2>
+                <h6 class="text">${card.text}</h6>
+            </div>
+            <button>
+                read more
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </button>
+        </div>
+    `
+  );
 
-  container.insertAdjacentHTML("beforeend", bookscards);
-};
+  cards.insertAdjacentHTML("beforeend", cardsHTML.join(""));
+}
+
 window.addEventListener("load", loadEvent);

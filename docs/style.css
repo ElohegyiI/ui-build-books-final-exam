@@ -1,3 +1,5 @@
+/* CSS reset start */
+
 * {
   margin: 0;
   padding: 0;
@@ -31,60 +33,79 @@ select {
   border-radius: 0;
 }
 
-/* css reset */
-
-body {
-  font-family: "Overpass", sans-serif;
-  color: #1a24fb;
-  background-color: #f8f7f3;
+ol,
+ul,
+li {
+  list-style: none;
+  display: block;
 }
 
-header {
+/* CSS reset end */
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  background-color: #f8f7f3;
+  color: #1a24fb;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #1a24fb;
+  padding: 0 10px;
   height: 40px;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 50px;
-  background-color: #1a24fb;
+  color: #f8f7f3;
 }
 
-header h1 {
+#root header h4 {
   font-size: 12px;
   font-weight: 400;
-  color: #f8f7f3;
   letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-header span {
+#root header .material-symbols-outlined {
   font-size: 24px;
 }
 
-.bookcontainer {
+#root .content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 100px 20px;
-  max-width: 1280px;
-  padding: 50px;
+  width: 100%;
 }
 
-.bookcontainer .bookcard {
+#root .content .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px 20px;
+  max-width: 1280px;
+  margin-bottom: 100px;
+}
+
+#root .content .cards .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   height: 500px;
-  width: 350px;
-  padding-top: 45px;
-  padding: 40px;
-  color: #1a24fb;
-  border: 1px solid #1a24fb;
+  width: 380px;
 }
 
-.bookcontainer .bookcard .bookcardindex {
+#root .content .cards .card .number {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -96,72 +117,55 @@ header span {
   font-size: 24px;
 }
 
-.bookcontainer .bookcard .title {
-  height: 60px;
-  margin-bottom: 60px;
+#root .content .cards .card .textDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 472px;
+  padding: 40px;
+  border: 1px solid #1a24fb;
+}
+
+#root .content .cards .card .textDiv .title {
+  min-height: 100px;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.bookcontainer .bookcard .title,
-.bookcontainer .bookcard .sub,
-.bookcontainer .bookcard .text {
-  width: 90%;
-}
-
-.bookcontainer .bookcard .text {
-  font-size: 16;
-  font-weight: 300;
-}
-
-.bookcontainer .bookcard .sub {
-  font-weight: 200;
+#root .content .cards .card .textDiv .sub {
   font-size: 12px;
-  margin-bottom: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-.button button {
-  position: absolute;
+#root .content .cards .card .textDiv .text {
+  font-size: 16px;
+  font-weight: 400px;
+  font-family: "Overpass", sans-serif;
+}
+
+#root .content .cards .card button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  bottom: 0;
-  right: 0;
   height: 18px;
   width: 100%;
   font-size: 14px;
 }
 
-.button button:hover {
+#root .content .cards .card button:hover {
   background-color: #1a24fb;
   color: #f8f7f3;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 18;
+#root .content .cards .card button span {
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.button span {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-  font-size: 36px;
-}
-
-@media (max-width: 920px) {
-  .bookcontainer {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 510px) {
-  .bookcontainer {
-    width: 90%;
-  }
-
-  .bookcontainer .card {
-    width: 90%;
+@media (max-width: 440px) {
+  #root .content .cards .card {
+    width: 86%;
   }
 }
