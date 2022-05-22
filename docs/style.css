@@ -79,14 +79,14 @@ body {
   font-size: 24px;
 }
 
-#root .content {
+#root .bookcontainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-#root .content .cards {
+#root .bookcontainer .cards {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ body {
   margin-bottom: 100px;
 }
 
-#root .content .cards .card {
+#root .bookcontainer .cards .card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -105,7 +105,7 @@ body {
   width: 380px;
 }
 
-#root .content .cards .card .number {
+#root .bookcontainer .cards .card .number {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -117,7 +117,7 @@ body {
   font-size: 24px;
 }
 
-#root .content .cards .card .textDiv {
+#root .bookcontainer .cards .card .textDiv {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -126,26 +126,26 @@ body {
   border: 1px solid #1a24fb;
 }
 
-#root .content .cards .card .textDiv .title {
+#root .bookcontainer .cards .card .textDiv .title {
   min-height: 100px;
   font-size: 36px;
   font-weight: 700;
 }
 
-#root .content .cards .card .textDiv .sub {
+#root .bookcontainer .cards .card .textDiv .sub {
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-#root .content .cards .card .textDiv .text {
+#root .bookcontainer .cards .card .textDiv .text {
   font-size: 16px;
   font-weight: 400px;
   font-family: "Overpass", sans-serif;
 }
 
-#root .content .cards .card button {
+#root .bookcontainer .cards .card button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -154,18 +154,18 @@ body {
   font-size: 14px;
 }
 
-#root .content .cards .card button:hover {
+#root .bookcontainer .cards .card button:hover {
   background-color: #1a24fb;
   color: #f8f7f3;
 }
 
-#root .content .cards .card button span {
+#root .bookcontainer .cards .card button span {
   font-size: 18px;
   font-weight: 600;
 }
 
 @media (max-width: 440px) {
-  #root .content .cards .card {
+  #root .bookcontainer .cards .card {
     width: 86%;
   }
 }
